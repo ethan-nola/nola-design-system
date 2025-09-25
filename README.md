@@ -1,77 +1,200 @@
-# shadcn Storybook Registry
+# NOLA Education ShadCN UI Library
 
-This is a registry of [storybook](https://storybook.js.org/) stories for all the
-[shadcn](https://ui.shadcn.com/) components. Build using the
-[shadcn-registry-template](https://github.com/shadcn-ui/registry-template) and
-using the shadcn CLI to build the registry.
+An educational-focused extension of the [shadcn-storybook-registry](https://github.com/lloydrichards/shadcn-storybook-registry) designed to provide age-appropriate, accessible UI components for NOLA Education's K-12 and post-graduate platforms.
 
-## How to Use
+## 🎯 Project Mission
 
-### Add Registry to Your Project
+This registry extends shadcn/ui with educational themes and components specifically designed for three distinct user groups:
+
+- **🎨 Foundation** - Middle school students (ages 11-14)
+- **🚀 Pathways** - High school students (ages 14-18)  
+- **💼 Professional** - Post-graduate learners (ages 18+)
+
+Our goal is to create a standardized UI library that reduces development costs by 46% while providing age-appropriate, accessible, and engaging educational interfaces.
+
+## 📚 Documentation
+
+- **[Development Plan](./DEVELOPMENT_PLAN.md)** - Complete 13-week roadmap
+- **[Implementation Checklist](./IMPLEMENTATION_CHECKLIST.md)** - Quick reference guide
+- **[Corporate Setup](./CORPORATE-SETUP.md)** - Fork management and sync instructions
+- **[WARP Guide](./WARP.md)** - Development workflow documentation
+
+## 🎨 Educational Themes
+
+### Foundation (Middle School)
+- **Design Philosophy**: Engaging, clear, and accessible
+- **Features**: Larger touch targets, higher contrast, gamification elements
+- **Colors**: Vibrant blue, warm purple, soft green
+- **Typography**: 16px base, relaxed line height for easier reading
+
+### Pathways (High School)
+- **Design Philosophy**: Modern, balanced, and social
+- **Features**: Contemporary design, career exploration tools, collaborative features
+- **Colors**: Modern teal, deep purple, energetic coral
+- **Typography**: 15px base, balanced spacing
+
+### Professional (Post-Graduate)
+- **Design Philosophy**: Sophisticated and efficient
+- **Features**: Information-dense layouts, productivity tools, minimal design
+- **Colors**: Navy blue, slate gray, gold accents
+- **Typography**: 14px base, compact spacing
+
+## 🚀 Quick Start
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/ethan-nola/shadcn-storybook-registry.git
+cd shadcn-storybook-registry
+
+# Install dependencies (bun preferred)
+bun install
+# or
+npm install
+
+# Start development servers
+bun dev          # Next.js app on http://localhost:3000
+bun storybook    # Storybook on http://localhost:6006
+```
+
+### Using the Registry
 
 Configure this registry in your `components.json`:
 
 ```json
 {
   "registries": {
+    "@nola": "https://registry.nolaeducation.org/v2/r/{name}.json",
     "@storybook": "https://registry.lloydrichards.dev/v2/r/{name}.json"
   }
 }
 ```
 
-### Install Components
+Install components with educational themes:
 
 ```bash
-# Install using registry namespace
-npx shadcn@latest add @storybook/button-story
+# Install themes
+npx shadcn@latest add @nola/theme-foundation
+npx shadcn@latest add @nola/theme-pathways
+npx shadcn@latest add @nola/theme-professional
 
-# Or install directly via URL
-npx shadcn@latest add https://registry.lloydrichards.dev/v2/r/button-story.json
+# Install educational blocks
+npx shadcn@latest add @nola/assignment-card
+npx shadcn@latest add @nola/progress-tracker
+npx shadcn@latest add @nola/grade-entry
+
+# Install complete patterns
+npx shadcn@latest add @nola/student-dashboard
+npx shadcn@latest add @nola/teacher-workspace
 ```
 
-You can visit the [storybook registry](https://registry.lloydrichards.dev/) to
-browse available components and copy installation commands.
+## 📦 Component Categories
 
-## How to Contribute
+### Core UI Components (47 components)
+All standard shadcn/ui components with Storybook stories and educational theme support.
 
-### Getting Started
+### Educational Blocks (In Development)
+- **Student Components**: Assignment cards, progress trackers, achievement badges
+- **Teacher Tools**: Grade entry, lesson planners, attendance tracking
+- **Admin Dashboards**: Enrollment stats, compliance tracking, resource allocation
 
-1. Clone the repository
-2. Install the dependencies
+### Application Patterns (Planned)
+- **Authentication**: Role-based login flows
+- **Dashboards**: Student home, teacher workspace, admin overview
+- **Learning Modules**: Lesson viewers, quiz interfaces, assignment submission
 
-   ```bash
-   bun install
-   ```
+## 🛠️ Development
 
-3. Run the development server
+### Available Scripts
 
-   ```bash
-   bun dev
-   ```
+```bash
+# Development
+bun dev                # Start Next.js development server
+bun storybook         # Start Storybook
+bun registry:build    # Build registry files
+bun registry:dev      # Build registry in watch mode
 
-4. Add/update the stories in the `src/registry` directory
-5. Add/update the `registry.json` file
-6. Build the registry
+# Testing
+bun test              # Run all tests
+bun test:unit         # Run unit tests
+bun test:storybook    # Run Storybook tests
+bun type-check        # TypeScript validation
 
-   ```bash
-   bun registry:build
-   ```
+# Code Quality
+bun lint              # Run ESLint
+bun format:write      # Format with Prettier
+bun format:check      # Check formatting
 
-### Testing
+# Build
+bun build             # Build for production
+bun start             # Start production server
+```
 
-1. Run the local development server
+### Project Structure
 
-   ```bash
-   bun dev
-   ```
+```
+shadcn-storybook-registry/
+├── registry/
+│   ├── ui/               # Core components with stories
+│   ├── tokens/           # Design token documentation
+│   ├── themes/           # Educational themes (new)
+│   ├── blocks/           # Composite components (new)
+│   └── patterns/         # Page patterns (new)
+├── components/ui/        # shadcn/ui components
+├── .storybook/          # Storybook configuration
+├── app/                 # Next.js app
+└── public/r/            # Generated registry files
+```
 
-2. test the registry by running the shadcn CLI
+## 🎯 Success Metrics
 
-   ```bash
-   npx shadcn@latest add http://localhost:3000/v2/r/your-component.json
-   ```
+- **Development**: 46% reduction in design and development costs
+- **Accessibility**: WCAG 2.1 AA/AAA compliance by theme
+- **Performance**: <5 second component installation
+- **Coverage**: 90%+ test coverage
+- **Adoption**: 100% usage in new NOLA Education projects
 
-## Documentation
+## 🤝 Contributing
 
-Visit the [shadcn documentation](https://ui.shadcn.com/docs/registry) to view
-the full documentation.
+### For NOLA Education Team
+
+1. Create feature branches from `develop`
+2. Prefix commits with scope: `feat:`, `fix:`, `docs:`, `theme:`, `block:`
+3. Follow the educational design guidelines
+4. Ensure accessibility compliance for target age group
+5. Submit PRs with complete test coverage
+
+### Syncing with Upstream
+
+We regularly sync with the original [lloydrichards/shadcn-storybook-registry](https://github.com/lloydrichards/shadcn-storybook-registry):
+
+```bash
+# Run monthly sync
+./sync-upstream.sh
+```
+
+## 📄 License
+
+MIT License - See [LICENSE](./LICENSE) file
+
+## 🙏 Acknowledgments
+
+- Original registry by [Lloyd Richards](https://github.com/lloydrichards)
+- Built on [shadcn/ui](https://ui.shadcn.com/) by [@shadcn](https://twitter.com/shadcn)
+- Powered by [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/), and [Storybook](https://storybook.js.org/)
+
+## 📞 Support
+
+- **NOLA Issues**: [GitHub Issues](https://github.com/ethan-nola/shadcn-storybook-registry/issues)
+- **Documentation**: See `/docs` folder
+- **Storybook**: http://localhost:6006 (development)
+- **Registry**: http://localhost:3000 (development)
+
+---
+
+**Current Version**: 0.1.0  
+**Last Updated**: September 2025  
+**Next Sync**: October 2025
+
+*Part of the NOLA Education Digital Transformation Initiative*
