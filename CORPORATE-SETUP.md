@@ -1,4 +1,4 @@
-# Corporate Setup Guide - NOLA Education
+# NOLA Design System - Corporate Setup Guide
 
 ## Repository Information
 
@@ -8,7 +8,7 @@
 
 ## Quick Start
 
-This repository is already configured as a corporate fork with proper upstream tracking.
+The NOLA Design System repository is configured as a corporate fork with proper upstream tracking to maintain synchronization with the original shadcn registry foundation.
 
 ### Development Setup
 

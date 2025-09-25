@@ -1,7 +1,15 @@
 {
-  "name": "shadcn-storybook-registry",
+  "name": "nola-design-system",
   "version": "0.1.0",
   "private": true,
+  "description": "NOLA Design System - Educational UI components and themes for K-12 and post-graduate learning platforms",
+  "keywords": ["design-system", "education", "ui-components", "storybook", "shadcn", "tailwind", "accessibility"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ethan-nola/nola-design-system.git"
+  },
+  "author": "NOLA Education",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build && bun run storybook:build",

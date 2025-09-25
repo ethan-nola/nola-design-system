@@ -1,10 +1,10 @@
-# NOLA Education ShadCN UI Library
+# NOLA Design System
 
-An educational-focused extension of the [shadcn-storybook-registry](https://github.com/lloydrichards/shadcn-storybook-registry) designed to provide age-appropriate, accessible UI components for NOLA Education's K-12 and post-graduate platforms.
+A comprehensive educational design system built for NOLA Education, providing age-appropriate, accessible UI components for K-12 and post-graduate learning platforms. Based on the proven [shadcn/ui](https://ui.shadcn.com/) foundation with educational enhancements.
 
 ## 🎯 Project Mission
 
-This registry extends shadcn/ui with educational themes and components specifically designed for three distinct user groups:
+The NOLA Design System extends shadcn/ui with educational themes and components specifically designed for three distinct user groups:
 
 - **🎨 Foundation** - Middle school students (ages 11-14)
 - **🚀 Pathways** - High school students (ages 14-18)  
@@ -92,7 +92,7 @@ npx shadcn@latest add @nola/teacher-workspace
 ## 📦 Component Categories
 
 ### Core UI Components (47 components)
-All standard shadcn/ui components with Storybook stories and educational theme support.
+All standard shadcn/ui components enhanced with NOLA educational themes, comprehensive Storybook documentation, and age-appropriate adaptations.
 
 ### Educational Blocks (In Development)
 - **Student Components**: Assignment cards, progress trackers, achievement badges

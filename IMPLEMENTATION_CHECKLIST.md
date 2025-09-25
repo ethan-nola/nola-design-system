@@ -1,4 +1,4 @@
-# Quick Reference: Implementation Checklist
+# NOLA Design System - Implementation Checklist
 
 ## Phase 1: Theme System (Weeks 1-3)
 ### Foundation Theme (Middle School)

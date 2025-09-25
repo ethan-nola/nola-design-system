@@ -1,8 +1,8 @@
-# NOLA Education UI Library Development Plan
+# NOLA Design System - Development Plan
 
 ## Executive Summary
 
-This document outlines the comprehensive development plan for extending the nola-design-system into a complete organizational UI library for NOLA Education. The library will serve three distinct user groups through themed experiences: middle-schoolers (Foundation), high-schoolers (Pathways), and post-graduates (Professional).
+This document outlines the comprehensive development plan for extending the NOLA Design System into a complete organizational UI library for NOLA Education. The library will serve three distinct user groups through themed experiences: middle-schoolers (Foundation), high-schoolers (Pathways), and post-graduates (Professional).
 
 ---
 
@@ -74,7 +74,7 @@ Professional: Base 14px, Line Height 1.5, Letter Spacing normal
 ### Registry Structure
 
 ```
-nola-design-system/
+NOLA Design System/
 ├── registry/
 │   ├── ui/                      # Core components (existing)
 │   ├── tokens/                  # Design tokens (existing)
@@ -596,7 +596,7 @@ docs/
 
 - [ShadCN UI Documentation](https://ui.shadcn.com)
 - [WCAG 2.1 Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
-- [Original Registry Template](https://github.com/lloydrichards/nola-design-system)
+- [Original Registry Template](https://github.com/lloydrichards/NOLA Design System)
 - [Tailwind CSS 4 Documentation](https://tailwindcss.com)
 - [Storybook Best Practices](https://storybook.js.org/docs)
 

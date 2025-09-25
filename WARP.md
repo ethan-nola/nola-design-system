@@ -4,14 +4,14 @@ This file provides guidance to WARP (warp.dev) when working with code in this re
 
 ## Project Overview
 
-This is a shadcn/ui Storybook registry that provides interactive stories for shadcn/ui components. The project serves both as documentation and a distributable component registry. Stories are located in the `registry/` directory and are built into a registry format that can be consumed via the shadcn CLI.
+This is the **NOLA Design System** - a comprehensive educational design system built for NOLA Education. It provides age-appropriate, accessible UI components with interactive Storybook documentation and a distributable component registry. Stories are located in the `registry/` directory and are built into a registry format that can be consumed via the shadcn CLI.
 
 **Architecture:**
 - **Framework:** Next.js with TypeScript
 - **Package Manager:** Bun (preferred, as evidenced by `bun.lock`)
 - **Storybook:** v9.x with Next.js Vite builder
 - **Testing:** Vitest with Playwright for browser-based component tests
-- **Styling:** Tailwind CSS with shadcn/ui design system
+- **Styling:** Tailwind CSS with NOLA educational design system themes
 - **Registry System:** Custom registry built via `shadcn build` command
 
 ## Quick Start
@@ -164,11 +164,16 @@ Tests run in Chromium via Playwright browser provider.
 The registry allows components to be installed via shadcn CLI:
 
 ```bash
-# Install from this registry
-npx shadcn@latest add @storybook/button-story
+# Install from NOLA Design System registry
+npx shadcn@latest add @nola/button-story
 
-# Or direct URL
-npx shadcn@latest add https://registry.lloydrichards.dev/v2/r/button-story.json
+# Install educational themes
+npx shadcn@latest add @nola/theme-foundation
+npx shadcn@latest add @nola/theme-pathways
+npx shadcn@latest add @nola/theme-professional
+
+# Or direct URL (when deployed)
+npx shadcn@latest add https://registry.nolaeducation.org/v2/r/button-story.json
 ```
 
 **Registry Configuration:**

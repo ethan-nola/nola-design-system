@@ -21,10 +21,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Shadcn Storybook Registry",
-    template: `%s | Shadcn Storybook Registry`,
+    default: "NOLA Design System",
+    template: `%s | NOLA Design System`,
   },
-  description: "A collection of stories for the components of shadcn/ui",
+  description: "Educational design system for NOLA Education - Age-appropriate UI components for K-12 and post-graduate learning platforms",
   icons: {
     icon: "/favicon.svg",
   },
