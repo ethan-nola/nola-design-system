@@ -130,7 +130,7 @@ const meta: Meta<typeof Component> = {
   tags: ["autodocs"],
   parameters: { layout: "centered" },
   args: {
-    // Default args
+    // Default args here unless story needs variants
   },
 } satisfies Meta<typeof Component>;
 
@@ -142,6 +142,24 @@ type Story = StoryObj<typeof meta>;
  */
 export const Default: Story = {};
 ```
+
+### Required Stories
+
+Each component story should include:
+- **Default**: Basic component usage
+- **Interactive components**: Add `play` function test stories for state changes
+- **Common variants**: Loading, Disabled, Small, Large, WithIcon (as applicable)
+
+### Story Categories & Naming
+
+- **UI Components**: `ui/ComponentName` - Core shadcn/ui components
+- **Design Tokens**: `design/TokenName` - Color, typography, spacing documentation
+- **Educational Themes**: `themes/ThemeName` - NOLA educational theme variants
+
+**JSDoc Documentation:**
+- Follow existing JSDoc comment pattern for each story export
+- Example: `/** Use the 'outline' button to reduce emphasis on secondary actions */`
+- Main component gets descriptive JSDoc explaining overall purpose
 
 ### Design Token Stories
 
@@ -158,6 +176,28 @@ Design token stories (in `registry/tokens/`) document CSS custom properties:
 - **Visual Regression:** Stories serve as visual baselines
 
 Tests run in Chromium via Playwright browser provider.
+
+### Interactive Testing
+
+**Test-only Stories:**
+- Use `tags: ["!dev", "!autodocs"]` for test-only stories
+- Include both success and error case tests for forms/validation
+
+**Play Functions:**
+- Use `play` functions with `userEvent` and `expect` for interactions
+- Test components with state changes and user interactions
+- Example:
+```typescript
+export const InteractiveTest: Story = {
+  tags: ["!dev", "!autodocs"],
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole('button');
+    await userEvent.click(button);
+    await expect(button).toBeDisabled();
+  }
+};
+```
 
 ## Registry System
 
@@ -180,6 +220,26 @@ npx shadcn@latest add https://registry.nolaeducation.org/v2/r/button-story.json
 - `registry.json` - Manifest of all installable components
 - `components.json` - shadcn/ui configuration with aliases
 - `shadcn build` - Generates registry files in `public/v2/r`
+
+### Registry Entry Format
+
+Each story needs corresponding entry in `registry.json`:
+
+```json
+{
+  "name": "component-story",
+  "title": "Component Story",
+  "type": "registry:ui",
+  "meta": { "type": "ui", "story": "ui-component" },
+  "registryDependencies": ["component"],
+  "dependencies": ["external-lib"],
+  "files": [{ "path": "registry/component.stories.tsx", "type": "registry:ui" }]
+}
+```
+
+**Dependencies:**
+- `registryDependencies`: shadcn/ui components (e.g., `["button", "form"]`)
+- `dependencies`: External npm packages (e.g., `["lucide-react", "zod"]`)
 
 ## Environment & Deployment
 
@@ -216,6 +276,41 @@ npx shadcn@latest add https://registry.nolaeducation.org/v2/r/button-story.json
 - Include interactive `play` functions for stateful components
 - Tag test-only stories with `["!dev", "!autodocs"]`
 - Run `bun lint && bun type-check` (or `npm run lint && npm run type-check`) before committing
+
+## Common Implementation Patterns
+
+### Form Components
+- Use `react-hook-form` with `zod` validation
+- Include both success/error test scenarios
+- Use `action()` from Storybook for form submissions
+- Example:
+```typescript
+/**
+ * Form with validation and error states
+ */
+export const FormWithValidation: Story = {
+  play: async ({ canvasElement }) => {
+    // Test both success and error scenarios
+  }
+};
+```
+
+### Charts
+- Use `recharts` with `ChartContainer` wrapper
+- Define `ChartConfig` for consistent theming
+- Support responsive design
+
+### Code Style Guidelines
+
+**TypeScript:**
+- Use `satisfies Meta<typeof Component>` for type safety
+- Prefer explicit types over `any`
+- Define schemas with `zod` for forms
+
+**Imports:**
+- **Always use**: `@/components/ui/` imports (required for registry build)
+- **Framework**: `@storybook/nextjs-vite` for type imports
+- **Icons**: `lucide-react` for consistent iconography
 
 ## Related Documentation
 
