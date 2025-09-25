@@ -159,45 +159,55 @@ setTheme('professional')
 
 ## Phase 4: Storybook Integration
 
-### 1. Update Storybook Preview
+### 1. Install Storybook Themes Addon
+```bash
+bun add -D @storybook/addon-themes
+# or
+npm install -D @storybook/addon-themes
+```
+
+### 2. Configure Addon in Storybook Main
+**File**: `.storybook/main.ts`
+
+```typescript
+const config: StorybookConfig = {
+  // ... existing configuration
+  addons: [
+    "@storybook/addon-docs",
+    "@storybook/addon-a11y",
+    "@storybook/addon-vitest",
+    "@storybook/addon-themes",  // Add this line
+    "storybook-addon-test-codegen",
+  ],
+  // ... rest of configuration
+};
+```
+
+### 3. Configure Theme Decorator
 **File**: `.storybook/preview.ts`
 
 ```typescript
-import { ThemeProvider } from 'next-themes'
+import type { Preview } from "@storybook/nextjs-vite";
+import { withThemeByClassName } from '@storybook/addon-themes';
+
+import "../app/globals.css";
 
 const preview: Preview = {
   decorators: [
-    (Story) => (
-      <ThemeProvider
-        attribute="class"
-        themes={['light', 'dark', 'foundation', 'pathways', 'professional']}
-        defaultTheme="light"
-      >
-        <Story />
-      </ThemeProvider>
-    ),
+    withThemeByClassName({
+      themes: {
+        light: '',                    // Default (no class)
+        dark: 'dark',                // Existing dark mode
+        foundation: 'foundation',     // Ages 11-14
+        pathways: 'pathways',        // Ages 14-18
+        professional: 'professional' // Ages 18+
+      },
+      defaultTheme: 'light',
+      classTarget: 'html'  // Apply to preview iframe html
+    }),
   ],
-  // ... existing configuration
-}
-```
-
-### 2. Add Theme Switching Toolbar
-**File**: `.storybook/preview.ts` (parameters section)
-
-```typescript
-parameters: {
-  backgrounds: { disable: true }, // Disable default backgrounds
-  theme: {
-    values: [
-      { name: 'Light', value: 'light' },
-      { name: 'Dark', value: 'dark' },
-      { name: 'Foundation', value: 'foundation' },
-      { name: 'Pathways', value: 'pathways' },
-      { name: 'Professional', value: 'professional' },
-    ],
-    default: 'light',
-  },
-}
+  // ... existing parameters
+};
 ```
 
 ### 3. Test Storybook Theme Switching

@@ -58,20 +58,23 @@
 
 ### 4. Storybook Theme Switching Integration
 
-**Decision**: Use Storybook's next-themes addon with custom theme toolbar
+**Decision**: Use `@storybook/addon-themes` with `withThemeByClassName` decorator
 
 **Rationale**:
-- Leverages existing Storybook 9.x setup
-- Provides consistent theme switching between app and documentation
-- Maintains story isolation and preview capabilities
-- Follows Storybook community best practices
+- Official Storybook addon specifically designed for theme switching
+- Uses `withThemeByClassName` decorator for CSS class-based theming
+- Provides consistent theme switching toolbar in Storybook UI
+- Aligns with industry best practices (verified via Multi-Theme Best Practices research)
+- Currently NOT installed - needs to be added to project dependencies
 
 **Implementation approach**:
-- Add theme switcher to Storybook toolbar
-- Configure next-themes provider in Storybook decorators
-- Ensure all stories inherit theme context properly
+- Install `@storybook/addon-themes` package
+- Configure `withThemeByClassName` decorator with theme classes ('foundation', 'pathways', 'professional')
+- Add addon to Storybook main.ts configuration
+- Ensure theme classes apply to preview iframe's html element
 
 **Alternatives considered**:
+- next-themes integration: Less direct control over Storybook-specific UI
 - Custom Storybook addon: Would violate minimal tech introduction principle
 - Manual theme preview: Poor developer experience for documentation
 

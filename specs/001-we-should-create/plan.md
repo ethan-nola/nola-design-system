@@ -169,26 +169,30 @@ ios/ or android/
 **Task Generation Strategy**:
 - Load `.specify/templates/tasks-template.md` as base
 - Generate tasks from Phase 1 design docs (contracts, data-model, quickstart)
-- Theme CSS implementation tasks [P] (independent themes)
-- next-themes configuration task
-- Storybook integration tasks [P] (independent of main app)
-- Theme validation and testing tasks
-- Implementation tasks following quickstart guide phases
+- Install `@storybook/addon-themes` package dependency
+- Implement 3-tier CSS token architecture (Raw → Semantic → Component)
+- Theme CSS implementation tasks [P] (independent themes can be developed simultaneously)
+- next-themes configuration task with educational theme names
+- Storybook addon integration tasks [P] (independent of main app)
+- Theme validation and testing tasks (contrast ratios, touch targets, accessibility)
+- Implementation tasks following enhanced quickstart guide phases
 
 **Ordering Strategy**:
 - Constitutional compliance: Research-driven development (validate patterns first)
-- Dependency order: CSS themes → next-themes config → Storybook integration → validation
+- Dependency order: Package installation → 3-tier CSS structure → Theme definitions → Integration → Validation
 - Mark [P] for parallel execution (Foundation, Pathways, Professional themes can be developed simultaneously)
 - Test-driven approach: Theme validation tests before final implementation
+- Semantic versioning: Include version metadata in theme definitions
 
-**Estimated Output**: 15-20 numbered, ordered tasks in tasks.md
+**Estimated Output**: 18-22 numbered, ordered tasks in tasks.md
 
 **Key Task Categories**:
-1. **Research Tasks**: Validate theming patterns and accessibility requirements
-2. **CSS Implementation**: Create theme variable definitions (parallelizable)
-3. **Integration Tasks**: Configure next-themes and Storybook
-4. **Validation Tasks**: Test theme switching, accessibility, component compatibility
-5. **Documentation Tasks**: Update component stories and usage examples
+1. **Dependency Tasks**: Install `@storybook/addon-themes` package
+2. **Architecture Tasks**: Implement 3-tier token structure (Raw/Semantic/Component)
+3. **CSS Implementation**: Create theme variable definitions with versioning [P]
+4. **Integration Tasks**: Configure next-themes and Storybook addon with `withThemeByClassName`
+5. **Validation Tasks**: Test theme switching, accessibility compliance, component compatibility
+6. **Documentation Tasks**: Update component stories and usage examples
 
 **IMPORTANT**: This phase is executed by the /tasks command, NOT by /plan
 

@@ -119,33 +119,38 @@ Each theme must provide all required CSS custom properties in the `:root` scope 
 ### Professional Theme Variables
 ```css
 .professional {
-  /* Primary Colors */
-  --primary: oklch(0.25 0.15 230); /* Navy blue */
+  /* Theme Metadata */
+  --theme-name: 'professional';
+  --theme-version: '1.0.0';
+
+  /* Raw Tokens (Tier 1) */
+  --navy-600: oklch(0.25 0.15 230);
+  --slate-500: oklch(0.35 0.10 220);
+  --gold-500: oklch(0.70 0.20 65);
+
+  /* Semantic Tokens (Tier 2) */
+  --primary: var(--navy-600);
   --primary-foreground: oklch(0.95 0 0);
-
-  /* Secondary Colors */
-  --secondary: oklch(0.35 0.10 220); /* Slate gray */
+  --secondary: var(--slate-500);
   --secondary-foreground: oklch(0.95 0 0);
-
-  /* Interactive States */
-  --accent: oklch(0.70 0.20 65); /* Gold accents */
+  --accent: var(--gold-500);
   --accent-foreground: oklch(0.10 0 0);
 
-  /* Touch Targets */
+  /* Educational Context Tokens */
   --min-touch-target: 40px;
-  --button-padding-x: 16px;
-  --button-padding-y: 8px;
-
-  /* Typography */
   --font-size-base: 14px;
   --line-height-base: 1.4;
-  --letter-spacing-base: 0.01em;
-
-  /* Focus Indicators */
   --focus-width: 1px;
   --border-radius: 0.5rem;
 }
 ```
+
+### Theme Versioning Contract
+Each theme includes version metadata for compatibility tracking:
+- `--theme-version`: Semantic version of theme definition
+- Breaking changes increment major version
+- New tokens or value updates increment minor version
+- Documentation updates increment patch version
 
 ## Accessibility Contract
 
@@ -182,25 +187,29 @@ const currentTheme = localStorage.getItem('nola-theme'); // 'foundation'
 
 ## Storybook Integration Contract
 
-### Theme Toolbar
-Storybook must provide theme switching toolbar with options:
-- Light (Default shadcn/ui)
-- Dark (Default shadcn/ui)
-- Foundation (Ages 11-14)
-- Pathways (Ages 14-18)
-- Professional (Ages 18+)
+### Theme Addon Configuration
+Storybook integration uses `@storybook/addon-themes` with `withThemeByClassName` decorator:
 
-### Story Decoration
-All stories inherit theme context automatically:
 ```typescript
+import { withThemeByClassName } from '@storybook/addon-themes';
+
 export const decorators = [
-  (Story) => (
-    <ThemeProvider themes={['light', 'dark', 'foundation', 'pathways', 'professional']}>
-      <Story />
-    </ThemeProvider>
-  ),
+  withThemeByClassName({
+    themes: {
+      light: '',              // Default shadcn/ui (no class)
+      dark: 'dark',          // Default shadcn/ui dark mode
+      foundation: 'foundation',    // Ages 11-14
+      pathways: 'pathways',        // Ages 14-18
+      professional: 'professional' // Ages 18+
+    },
+    defaultTheme: 'light',
+    classTarget: 'html'  // Apply theme class to preview iframe html element
+  })
 ];
 ```
+
+### Theme Toolbar
+The addon automatically provides theme switching toolbar with configured options. Theme changes apply immediately to all story previews without page refresh.
 
 ## Error Handling
 
