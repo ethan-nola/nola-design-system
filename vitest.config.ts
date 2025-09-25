@@ -36,6 +36,7 @@ export default defineConfig({
       {
         test: {
           name: "unit",
+          environment: "jsdom",
         },
       },
     ],

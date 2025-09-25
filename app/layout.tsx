@@ -2,6 +2,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { ThemeProvider } from "next-themes";
 
 import { Toaster } from "@/components/ui/sonner";
 import Script from "next/script";
@@ -24,7 +25,8 @@ export const metadata: Metadata = {
     default: "NOLA Design System",
     template: `%s | NOLA Design System`,
   },
-  description: "Educational design system for NOLA Education - Age-appropriate UI components for K-12 and post-graduate learning platforms",
+  description:
+    "Educational design system for NOLA Education - Age-appropriate UI components for K-12 and post-graduate learning platforms",
   icons: {
     icon: "/favicon.svg",
   },
@@ -45,12 +47,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header />
-        {children}
-        <Footer />
-        <Analytics />
-        <SpeedInsights />
-        <Toaster />
+        <ThemeProvider
+          attribute="class"
+          themes={['light', 'dark', 'foundation', 'pathways', 'professional']}
+          defaultTheme="light"
+          enableSystem
+        >
+          <Header />
+          {children}
+          <Footer />
+          <Analytics />
+          <SpeedInsights />
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );

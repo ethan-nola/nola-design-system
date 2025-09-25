@@ -1,8 +1,23 @@
 import type { Preview } from "@storybook/nextjs-vite";
+import { withThemeByClassName } from '@storybook/addon-themes';
 
 import "../app/globals.css";
 
 const preview: Preview = {
+  decorators: [
+    withThemeByClassName({
+      themes: {
+        light: '',                    // Default shadcn/ui (no class)
+        dark: 'dark',                // Default shadcn/ui dark mode
+        foundation: 'foundation',     // Ages 11-14
+        pathways: 'pathways',        // Ages 14-18
+        professional: 'professional' // Ages 18+
+      },
+      defaultTheme: 'light',
+      classTarget: 'html'  // Apply theme class to preview iframe html element
+    }),
+  ],
+
   parameters: {
     controls: {
       matchers: {
