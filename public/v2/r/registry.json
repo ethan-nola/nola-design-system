@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "shadcn-storybook-registry",
+  "name": "nola-design-system",
   "homepage": "https://github.com/lloydrichards/shadcn-storybook-registry",
   "author": "Lloyd Richards <lloyd.d.richards@gmail.com>",
   "items": [
