@@ -102,7 +102,7 @@ npx shadcn add @patterns/teacher-workspace
 - ✅ Complete documentation
 
 ## Contact & Resources
-- Repository: https://github.com/ethan-nola/shadcn-storybook-registry
+- Repository: https://github.com/ethan-nola/nola-design-system
 - Upstream: https://github.com/lloydrichards/shadcn-storybook-registry
 - Documentation: /docs
 - Storybook: http://localhost:6006

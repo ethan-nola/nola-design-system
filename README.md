@@ -45,8 +45,8 @@ Our goal is to create a standardized UI library that reduces development costs b
 
 ```bash
 # Clone the repository
-git clone https://github.com/ethan-nola/shadcn-storybook-registry.git
-cd shadcn-storybook-registry
+git clone https://github.com/ethan-nola/nola-design-system.git
+cd nola-design-system
 
 # Install dependencies (bun preferred)
 bun install
@@ -134,7 +134,7 @@ bun start             # Start production server
 ### Project Structure
 
 ```
-shadcn-storybook-registry/
+nola-design-system/
 ├── registry/
 │   ├── ui/               # Core components with stories
 │   ├── tokens/           # Design token documentation
@@ -186,7 +186,7 @@ MIT License - See [LICENSE](./LICENSE) file
 
 ## 📞 Support
 
-- **NOLA Issues**: [GitHub Issues](https://github.com/ethan-nola/shadcn-storybook-registry/issues)
+- **NOLA Issues**: [GitHub Issues](https://github.com/ethan-nola/nola-design-system/issues)
 - **Documentation**: See `/docs` folder
 - **Storybook**: http://localhost:6006 (development)
 - **Registry**: http://localhost:3000 (development)

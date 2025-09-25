@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Upstream Sync Script for ethan-nola/shadcn-storybook-registry
+# Upstream Sync Script for ethan-nola/nola-design-system
 # Run this periodically to pull updates from lloydrichards/shadcn-storybook-registry
 
 set -e
@@ -105,7 +105,7 @@ echo "- ✅ Updated main branch"
 if git branch | grep -q develop; then
     echo "- ✅ Updated develop branch"
 fi
-echo "- 🔗 Corporate fork: https://github.com/ethan-nola/shadcn-storybook-registry"
+echo "- 🔗 Corporate fork: https://github.com/ethan-nola/nola-design-system"
 echo "- 🔗 Original repo: https://github.com/lloydrichards/shadcn-storybook-registry"
 echo ""
 echo "🚀 Next steps:"

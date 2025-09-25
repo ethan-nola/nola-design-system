@@ -2,8 +2,8 @@
 
 ## Repository Information
 
-**Corporate Fork:** https://github.com/ethan-nola/shadcn-storybook-registry  
-**Original Upstream:** https://github.com/lloydrichards/shadcn-storybook-registry  
+**Corporate Fork:** https://github.com/ethan-nola/nola-design-system  
+**Original Upstream:** https://github.com/lloydrichards/shadcn-storybook-registry
 **Setup Date:** September 25, 2025
 
 ## Quick Start
@@ -14,8 +14,8 @@ This repository is already configured as a corporate fork with proper upstream t
 
 ```bash
 # Clone the corporate repository (if starting fresh)
-git clone https://github.com/ethan-nola/shadcn-storybook-registry.git
-cd shadcn-storybook-registry
+git clone https://github.com/ethan-nola/nola-design-system.git
+cd nola-design-system
 
 # Install dependencies
 npm install  # or bun install if you have bun
@@ -70,7 +70,7 @@ This will:
 - Fetch latest changes from lloydrichards/shadcn-storybook-registry
 - Merge updates into your main branch
 - Update your develop branch
-- Push changes to ethan-nola/shadcn-storybook-registry
+- Push changes to ethan-nola/nola-design-system
 
 ## Corporate Customization Areas
 
@@ -148,14 +148,14 @@ NEXT_PUBLIC_REGISTRY_NAME="NOLA Education Storybook Registry"
 
 ## Team Access
 
-**Repository Access:** https://github.com/ethan-nola/shadcn-storybook-registry  
+**Repository Access:** https://github.com/ethan-nola/nola-design-system
 **Settings:** Configure team access in GitHub repository settings
 
 ## Support
 
 - **WARP Development:** See `WARP.md` for development commands
 - **Original Documentation:** See `README.md` for upstream documentation  
-- **Corporate Issues:** Create issues in ethan-nola/shadcn-storybook-registry
+- **Corporate Issues:** Create issues in ethan-nola/nola-design-system
 - **Upstream Issues:** Report to lloydrichards/shadcn-storybook-registry
 
 ## Files Added for Corporate Fork
