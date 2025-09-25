@@ -7,17 +7,11 @@ A comprehensive educational design system built for NOLA Education, providing ag
 The NOLA Design System extends shadcn/ui with educational themes and components specifically designed for three distinct user groups:
 
 - **🎨 Foundation** - Middle school students (ages 11-14)
-- **🚀 Pathways** - High school students (ages 14-18)  
+- **🚀 Pathways** - High school students (ages 14-18)
 - **💼 Professional** - Post-graduate learners (ages 18+)
 
 Our goal is to create a standardized UI library that reduces development costs by 46% while providing age-appropriate, accessible, and engaging educational interfaces.
 
-## 📚 Documentation
-
-- **[Development Plan](./DEVELOPMENT_PLAN.md)** - Complete 13-week roadmap
-- **[Implementation Checklist](./IMPLEMENTATION_CHECKLIST.md)** - Quick reference guide
-- **[Corporate Setup](./CORPORATE-SETUP.md)** - Fork management and sync instructions
-- **[WARP Guide](./WARP.md)** - Development workflow documentation
 
 ## 🎨 Educational Themes
 
@@ -193,8 +187,8 @@ MIT License - See [LICENSE](./LICENSE) file
 
 ---
 
-**Current Version**: 0.1.0  
-**Last Updated**: September 2025  
+**Current Version**: 0.1.0
+**Last Updated**: September 2025
 **Next Sync**: October 2025
 
 *Part of the NOLA Education Digital Transformation Initiative*
