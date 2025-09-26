@@ -34,7 +34,7 @@ async function runConstitutionalChecks(): Promise<ViolationReport[]> {
         });
         
         process.stderr.write(`✅ Principle ${principle}: PASSED\n`);
-      } catch (error) {
+      } catch {
         const violation: ViolationReport = {
           principle,
           violations: [`Principle ${principle} compliance check failed`],
@@ -49,7 +49,7 @@ async function runConstitutionalChecks(): Promise<ViolationReport[]> {
     // Quick file-based checks for common violations
     await runQuickFileChecks(reports);
     
-  } catch (error) {
+  } catch {
     reports.push({
       principle: 'System',
       violations: ['Failed to run constitutional compliance checks'],
@@ -85,7 +85,7 @@ async function runQuickFileChecks(reports: ViolationReport[]): Promise<void> {
       });
     }
     
-  } catch (error) {
+  } catch {
     console.warn('Could not check app/globals.css for theme violations');
   }
   
@@ -113,7 +113,7 @@ async function runQuickFileChecks(reports: ViolationReport[]): Promise<void> {
       });
     }
     
-  } catch (error) {
+  } catch {
     console.warn('Could not run quick quality checks');
   }
 }

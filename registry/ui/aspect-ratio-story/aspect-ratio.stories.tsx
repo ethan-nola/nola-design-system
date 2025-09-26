@@ -12,6 +12,7 @@ const meta: Meta<typeof AspectRatio> = {
   argTypes: {},
   render: (args) => (
     <AspectRatio {...args} className="bg-slate-50 dark:bg-slate-800">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="https://images.unsplash.com/photo-1576075796033-848c2a5f3696?w=800&dpr=2&q=80"
         alt="Photo by Alvaro Pinot"

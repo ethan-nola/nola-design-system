@@ -47,7 +47,7 @@ describe('Constitutional Principle V: Quality-First Implementation', () => {
         /alert\(/,
       ];
       
-      const violations = [];
+      const violations: Array<{ file: string; pattern: string; matches: string[] }> = [];
       
       for (const file of allFiles) {
         const content = await readFile(file, 'utf8');
@@ -150,13 +150,13 @@ describe('Constitutional Principle V: Quality-First Implementation', () => {
       
       // Most UI components should have stories
       const componentsWithoutStories = componentNames.filter(comp => 
-        !storyNames.some(story => story.includes(comp))
+        comp && !storyNames.some(story => story && story.includes(comp))
       );
       
       // Allow some utility/primitive components to not have stories
       const allowedWithoutStories = ['index', 'utils', 'types'];
       const realMissingStories = componentsWithoutStories.filter(comp => 
-        !allowedWithoutStories.includes(comp)
+        comp && !allowedWithoutStories.includes(comp)
       );
       
       expect(realMissingStories.length).toBeLessThan(5);

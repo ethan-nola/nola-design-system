@@ -7,8 +7,7 @@
  */
 
 import { execSync } from 'child_process';
-import { readFile, writeFile } from 'fs/promises';
-import { glob } from 'glob';
+import { writeFile } from 'fs/promises';
 
 interface PrincipleStatus {
   principle: string;
@@ -104,11 +103,6 @@ async function testPrinciple(principle: string, name: string): Promise<Principle
     const lines = output.split('\n');
     
     // Count tests by looking for test result patterns
-    const testResults = lines.filter(line => 
-      line.includes(' ✓ ') || 
-      line.includes(' × ') || 
-      line.includes(' ❯ ')
-    );
     
     const passedTests = lines.filter(line => line.includes(' ✓ ')).length;
     const failedTests = lines.filter(line => line.includes(' × ') || line.includes(' ❯ ')).length;
@@ -135,9 +129,10 @@ async function testPrinciple(principle: string, name: string): Promise<Principle
     // Add principle-specific recommendations
     status.recommendations = getPrincipleRecommendations(principle, status.status);
     
-  } catch (error: any) {
+  } catch (error: unknown) {
     status.status = 'FAIL';
-    status.violations.push(`Test execution failed: ${error.message || 'Unknown error'}`);
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    status.violations.push(`Test execution failed: ${errorMessage}`);
     status.recommendations.push(`Check test file: tests/constitutional/principles/principle-${principle}.test.ts`);
   }
   
