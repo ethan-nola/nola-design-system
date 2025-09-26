@@ -8,14 +8,19 @@ stories that serve both documentation and installable component purposes.
 
 ## Quick Commands
 
+### Development
 - **Dev server**: `bun run storybook` (port 6006)
 - **Build**: `bun run build` (builds Next.js app + Storybook)
-- **Test all**: `bun run test`
-- **Test Storybook**: `bun run test:storybook` (browser tests)
-- **Test unit**: `bun run test:unit`
 - **Lint**: `bun run lint`
 - **Type check**: `bun run type-check`
 - **Format**: `bun run format:write`
+
+### Testing
+- **Test all**: `bun run test` (includes constitutional compliance)
+- **Test Storybook**: `bun run test:storybook` (browser tests)
+- **Test unit**: `bun run test:unit`
+- **Constitutional compliance**: `bun run test:constitutional` ⚠️ **CRITICAL**
+- **Compliance report**: `bun run test:constitutional:report`
 
 ## Registry Development
 
@@ -112,10 +117,46 @@ Each story needs corresponding entry in `registry.json`:
 
 ## Testing Strategy
 
+### Core Testing
 - **Storybook tests**: Browser-based with Playwright
 - **Accessibility**: a11y addon configured with 'todo' level
 - **Visual testing**: Stories serve as visual regression tests
+
+### Constitutional Compliance Testing ⚠️ **MANDATORY**
+
+**CRITICAL for AI Agents**: Always run constitutional compliance tests before extensive design system work.
+
+```bash
+# Before starting significant architectural changes
+bun run test:constitutional
+
+# Generate detailed violation analysis
+bun run test:constitutional:report
+```
+
+**5 Enforced Constitutional Principles:**
+1. **Upstream-First Component Architecture** - Prevents shadcn/ui compatibility violations
+2. **Theme-Component Separation** - Blocks theme logic in component code
+3. **Registry Publishing Compliance** - Ensures proper theme distribution
+4. **Research-Driven Development** - Validates educational decisions
+5. **Quality-First Implementation** - Prevents technical debt accumulation
+
+**When Constitutional Testing is Required:**
+- Before modifying core components in `components/ui/`
+- When adding or changing educational themes
+- After architectural refactoring
+- Before committing extensive changes
+- When working on registry system
+
+**Automated Safeguards:**
+- Pre-commit hooks block critical constitutional violations
+- CI/CD validates compliance on every push
+- Failed constitutional tests prevent merging to main branch
+
+### Quality Assurance Workflow
+- Run `bun run test:constitutional` before extensive work
 - Run `bun run lint && bun run type-check` before completing tasks
+- Generate compliance report for detailed analysis when needed
 
 ## Common Patterns
 
@@ -175,13 +216,32 @@ const SwatchList = () => {
 
 ## Important Notes
 
-- **Focus on registry development**: Only work on `registry/` directory and
-  Storybook files
-- **Maintain consistency**: Follow existing patterns in story structure and
-  naming
+### Development Focus
+- **Focus on registry development**: Only work on `registry/` directory and Storybook files
+- **Maintain consistency**: Follow existing patterns in story structure and naming
 - **Test interactivity**: Add play functions for components with state changes
 - **Registry dependencies**: Use correct dependency types (registry vs npm)
 - **Always use @/ imports**: Required for registry build system
 
-Always maintain consistency with existing patterns and run quality checks before
-completion.
+### Constitutional Compliance Requirements ⚠️ **CRITICAL**
+
+**MANDATORY for AI Agents working on this design system:**
+
+1. **Before Starting Work**: Run `bun run test:constitutional` to establish baseline
+2. **During Development**: Constitutional tests should pass continuously
+3. **Before Completion**: Generate compliance report with `bun run test:constitutional:report`
+4. **Architecture Changes**: Any component or theme modifications require constitutional validation
+
+**Violation Response Protocol:**
+- If constitutional tests fail, address violations before proceeding
+- Use compliance report to understand specific architectural issues
+- Never disable or bypass constitutional compliance checks
+- Seek clarification if constitutional principles conflict with requirements
+
+**Educational Mission Alignment:**
+- All work must support K-12 and post-graduate educational contexts
+- Maintain age-appropriate design patterns across Foundation, Pathways, Professional themes
+- Preserve WCAG AA accessibility compliance
+- Ensure registry-first distribution for educational theme consumption
+
+Always maintain consistency with existing patterns, pass constitutional compliance tests, and run quality checks before completion.

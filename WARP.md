@@ -55,9 +55,11 @@ This is the **NOLA Design System** - a comprehensive educational design system b
 - `bun storybook:test` (or `npm run storybook:test`) - Run Storybook test-runner
 
 ### Testing
-- `bun test` (or `npm test`) - Run all tests (unit + Storybook)
+- `bun test` (or `npm test`) - Run all tests (unit + Storybook + constitutional)
 - `bun test:unit` (or `npm run test:unit`) - Run unit tests only
 - `bun test:storybook` (or `npm run test:storybook`) - Run Storybook component tests with Playwright
+- `bun test:constitutional` (or `npm run test:constitutional`) - Run constitutional compliance tests
+- `bun test:constitutional:report` (or `npm run test:constitutional:report`) - Generate constitutional compliance report
 
 ### Code Quality
 - `bun lint` (or `npm run lint`) - Run ESLint
@@ -192,10 +194,45 @@ This is the industry-standard approach used by major design systems. See `STORYB
 
 - **Unit Tests:** Basic component functionality
 - **Storybook Tests:** Browser-based interaction testing with Playwright
+- **Constitutional Tests:** Architectural compliance and design system integrity
 - **Accessibility:** Built-in a11y addon checks
 - **Visual Regression:** Stories serve as visual baselines
 
 Tests run in Chromium via Playwright browser provider.
+
+### Constitutional Compliance Testing
+
+**Critical for Extensive Work**: Always run constitutional compliance tests when making significant changes to the design system.
+
+```bash
+# Before starting extensive work
+bun run test:constitutional
+
+# Generate detailed compliance report
+bun run test:constitutional:report
+
+# Watch mode during development (optional)
+bun run test:constitutional:watch
+```
+
+**5 Constitutional Principles Enforced:**
+1. **Upstream-First Component Architecture** - Maintains shadcn/ui ecosystem compatibility
+2. **Theme-Component Separation** - Complete isolation between themes and component logic
+3. **Registry Publishing Compliance** - All themes distributed via standard registry system
+4. **Research-Driven Development** - Educational decisions backed by research evidence
+5. **Quality-First Implementation** - No temporary fixes or technical debt
+
+**When to Run Constitutional Tests:**
+- Before any major component modifications
+- When adding new educational themes
+- After refactoring architectural patterns
+- Before pushing commits to remote repository
+- During code reviews and pull requests
+
+**Automated Protection:**
+- Pre-commit hooks automatically run critical constitutional checks
+- GitHub Actions validate compliance on every push
+- CI/CD blocks non-compliant changes from merging
 
 ### Interactive Testing
 
@@ -295,7 +332,9 @@ Each story needs corresponding entry in `registry.json`:
 - Use `lucide-react` for consistent iconography
 - Include interactive `play` functions for stateful components
 - Tag test-only stories with `["!dev", "!autodocs"]`
+- **CRITICAL**: Run constitutional compliance tests before extensive work: `bun test:constitutional`
 - Run `bun lint && bun type-check` (or `npm run lint && npm run type-check`) before committing
+- Check constitutional compliance report for detailed analysis: `bun test:constitutional:report`
 
 ## Common Implementation Patterns
 
