@@ -1,6 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
+# === DEPENDENCIES ===
 /node_modules
 /.pnp
 .pnp.*
@@ -10,36 +10,172 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
-/coverage
+# Bun
+.bun
+bun.lockb
 
-# next.js
+# === TESTING ===
+/coverage
+test-results/
+playwright-report/
+playwright/.cache/
+
+# Vitest
+vitest.coverage
+
+# Constitutional Compliance Reports (generated)
+constitutional-report.json
+CONSTITUTIONAL_COMPLIANCE_REPORT.md
+
+# === NEXT.JS ===
 /.next/
 /out/
 
-# production
+# Turbopack cache
+.turbo
+
+# === BUILD OUTPUTS ===
 /build
+/dist
 
-# misc
+# === STORYBOOK ===
+# Storybook build output
+public/storybook
+/storybook-static
+*storybook.log
+
+# === REGISTRY SYSTEM ===
+# Generated registry files (keep source registry.json but ignore builds)
+public/v1/r/
+public/v2/r/
+public/registry/
+
+# === CACHING ===
+# Prettier cache
+.prettier-cache
+
+# ESLint cache
+.eslintcache
+
+# TypeScript cache
+*.tsbuildinfo
+next-env.d.ts
+
+# === SYSTEM FILES ===
+# macOS
 .DS_Store
-*.pem
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
 
-# debug
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.tmp
+*.temp
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# === IDE / EDITORS ===
+# VSCode (keep settings.json but ignore others)
+.vscode/*
+!.vscode/settings.json
+
+# JetBrains IDEs
+.idea/
+*.swp
+*.swo
+*~
+
+# Vim
+*.swp
+*.swo
+*.swn
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# === LOGS ===
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+bun-debug.log*
+lerna-debug.log*
+*.log
 
-# env files (can opt-in for committing if needed)
+# === ENVIRONMENT ===
+# Environment files (can opt-in for committing if needed)
 .env*
+!.env.example
+!.env.template
 
-# vercel
+# === DEPLOYMENT ===
+# Vercel
 .vercel
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# === SECURITY ===
+*.pem
+*.key
+*.crt
+*.p12
+*.p8
+*.mobileprovision
 
-# storybook
-public/storybook
-*storybook.log
+# === TEMPORARY FILES ===
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Temporary files
+*.tmp
+*.temp
+
+# === DOCUMENTATION BUILDS ===
+# Generated documentation (keep source docs/)
+docs/.vitepress/cache
+docs/.vitepress/dist
+
+# === AI CONTEXT FILES ===
+# Keep AI context files but ignore any generated handoffs
+handoff-*.md
+!HANDOFF_*_CONSTITUTIONAL_COMPLIANCE_COMPLETE.md
+
+# === MISC ===
+# Ignore commonly created temp/test files
+test-file.*
+tmp/
+temp/
+
+# Development artifacts
+.netlify
+.now
+.vercel
