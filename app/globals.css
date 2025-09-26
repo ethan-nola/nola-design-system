@@ -1,10 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* Registry theme imports */
-@import "../registry/themes/foundation-theme/foundation.css";
-@import "../registry/themes/pathways-theme/pathways.css";
-@import "../registry/themes/professional-theme/professional.css";
+/* Educational themes are imported directly in Storybook preview.ts for proper path resolution */
 
 @custom-variant dark (&:is(.dark *));
 

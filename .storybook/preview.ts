@@ -2,6 +2,10 @@ import type { Preview } from "@storybook/nextjs-vite";
 import { withThemeByClassName } from '@storybook/addon-themes';
 
 import "../app/globals.css";
+// Direct imports for educational theme CSS - fixes path resolution from Storybook
+import "../registry/themes/foundation-theme/foundation.css";
+import "../registry/themes/pathways-theme/pathways.css";
+import "../registry/themes/professional-theme/professional.css";
 
 const preview: Preview = {
   decorators: [
