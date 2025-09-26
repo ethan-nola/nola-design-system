@@ -1,5 +1,3 @@
-import Image from "next/image";
-// Replace nextjs-vite with the name of your framework
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -14,11 +12,10 @@ const meta: Meta<typeof AspectRatio> = {
   argTypes: {},
   render: (args) => (
     <AspectRatio {...args} className="bg-slate-50 dark:bg-slate-800">
-      <Image
+      <img
         src="https://images.unsplash.com/photo-1576075796033-848c2a5f3696?w=800&dpr=2&q=80"
         alt="Photo by Alvaro Pinot"
-        fill
-        className="rounded-md object-cover"
+        className="rounded-md object-cover w-full h-full"
       />
     </AspectRatio>
   ),
