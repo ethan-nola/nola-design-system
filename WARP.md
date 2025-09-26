@@ -168,6 +168,26 @@ Design token stories (in `registry/tokens/`) document CSS custom properties:
 - Display both CSS variable names and computed colors/values
 - Group by functional vs component tokens
 
+**Theme Switching Reactivity**: Components displaying CSS custom properties in Storybook must implement reactivity to theme changes. Use the MutationObserver pattern:
+
+```typescript
+// Required for components that display getComputedStyle() values
+useEffect(() => {
+  const observer = new MutationObserver(() => {
+    forceUpdate(); // Re-render when theme classes change
+  });
+  
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['class', 'data-theme']
+  });
+  
+  return () => observer.disconnect();
+}, []);
+```
+
+This is the industry-standard approach used by major design systems. See `STORYBOOK_SOLUTION_ANALYSIS.md` for detailed research and validation.
+
 ## Testing Strategy
 
 - **Unit Tests:** Basic component functionality

@@ -20,6 +20,10 @@ TypeScript 5.x with Next.js 15.x and React 19.x: Follow standard conventions
 
 ## Recent Changes
 - 001-we-should-create: Added TypeScript 5.x with Next.js 15.x and React 19.x + next-themes (0.4.6), Tailwind CSS 4.x, Storybook 9.x, shadcn/ui components
+- Theme switching: Implemented industry-standard MutationObserver pattern for CSS custom property reactivity in Storybook stories
+
+## Theme Switching Implementation
+Components displaying CSS custom properties use MutationObserver pattern for theme reactivity. This is the production-proven approach used by IBM Carbon, Material-UI, and other major design systems. See STORYBOOK_SOLUTION_ANALYSIS.md for validation.
 
 <!-- MANUAL ADDITIONS START -->
 <!-- MANUAL ADDITIONS END -->

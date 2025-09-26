@@ -136,6 +136,42 @@ Each story needs corresponding entry in `registry.json`:
 - Use `getComputedStyle()` to read CSS custom properties
 - Display both CSS variable names and computed values
 - Organize by functional vs component token types
+- **Theme Reactivity**: Components displaying CSS custom properties must implement theme switching reactivity (see below)
+
+### Theme Switching & CSS Custom Properties
+
+**Problem**: React components using `getComputedStyle()` to read CSS variables don't automatically re-render when Storybook theme switching changes the CSS custom properties.
+
+**Solution**: Use MutationObserver pattern to watch for theme class/attribute changes:
+
+```typescript
+import { useEffect, useReducer } from 'react';
+
+const SwatchList = () => {
+  const [, forceUpdate] = useReducer(x => x + 1, 0);
+  
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      forceUpdate(); // Re-render when theme classes change
+    });
+    
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class', 'data-theme']
+    });
+    
+    return () => observer.disconnect();
+  }, []);
+  
+  // Now getComputedStyle() calls will reflect current theme
+  const primaryColor = getComputedStyle(document.documentElement)
+    .getPropertyValue('--primary');
+};
+```
+
+**Industry Validation**: This is the standard, production-proven approach used by major design systems (IBM Carbon, Material-UI, Mantine). It's officially recommended by Storybook for CSS custom property reactivity.
+
+**Reference**: See `STORYBOOK_SOLUTION_ANALYSIS.md` for comprehensive industry research and validation.
 
 ## Important Notes
 

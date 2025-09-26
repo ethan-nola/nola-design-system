@@ -138,8 +138,15 @@ nola-design-system/
 ├── components/ui/        # shadcn/ui components
 ├── .storybook/          # Storybook configuration
 ├── app/                 # Next.js app
-└── public/r/            # Generated registry files
+├── public/r/            # Generated registry files
+└── STORYBOOK_SOLUTION_ANALYSIS.md  # Theme switching implementation docs
 ```
+
+### Theme Switching
+
+The design system implements advanced theme switching in Storybook with reactive CSS custom properties. Components that display design tokens automatically update when switching between Foundation, Pathways, and Professional themes.
+
+**Technical Implementation**: Uses industry-standard MutationObserver pattern for CSS custom property reactivity, following best practices from major design systems like IBM Carbon and Material-UI. See `STORYBOOK_SOLUTION_ANALYSIS.md` for comprehensive research and validation.
 
 ## 🎯 Success Metrics
 

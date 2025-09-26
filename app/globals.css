@@ -118,10 +118,12 @@
   --theme-name: 'foundation';
   --theme-version: '1.0.0';
 
-  /* Tier 1: Raw Color Tokens */
-  --blue-500: oklch(0.45 0.25 220);
-  --purple-500: oklch(0.65 0.20 280);
-  --green-500: oklch(0.55 0.25 140);
+  /* Tier 1: Raw Color Tokens - Vibrant Color Fiesta Palette */
+  --amber-yellow: oklch(0.839 0.171 83.3);
+  --orange-red: oklch(0.671 0.212 39.0);
+  --electric-pink: oklch(0.641 0.257 8.1);
+  --rich-purple: oklch(0.546 0.248 295.9);
+  --bright-blue: oklch(0.637 0.195 259.5);
 
   /* Educational-specific Raw Tokens */
   --min-touch-target: 48px;
@@ -131,42 +133,42 @@
   --border-radius: 0.75rem;
 
   /* Tier 2: Semantic Tokens - Foundation Theme */
-  --background: oklch(0.98 0.05 220);
+  --background: oklch(1 0 0);
   --foreground: oklch(0.15 0 0);
-  --card: oklch(0.99 0.03 220);
+  --card: oklch(1 0 0);
   --card-foreground: oklch(0.15 0 0);
-  --popover: oklch(0.99 0.03 220);
+  --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.15 0 0);
-  --primary: var(--blue-500);
+  --primary: var(--rich-purple);
   --primary-foreground: oklch(0.95 0 0);
-  --secondary: var(--purple-500);
+  --secondary: var(--bright-blue);
   --secondary-foreground: oklch(0.95 0 0);
-  --muted: oklch(0.96 0.02 220);
+  --muted: oklch(1 0 0);
   --muted-foreground: oklch(0.40 0 0);
-  --accent: var(--green-500);
+  --accent: var(--electric-pink);
   --accent-foreground: oklch(0.95 0 0);
-  --destructive: oklch(0.60 0.25 25);
+  --destructive: var(--orange-red);
   --destructive-foreground: oklch(0.95 0 0);
-  --border: oklch(0.90 0.05 220);
-  --input: oklch(0.92 0.03 220);
-  --ring: oklch(0.45 0.25 220);
+  --border: oklch(0.90 0.05 83);
+  --input: oklch(1 0 0);
+  --ring: var(--rich-purple);
 
   /* Chart colors - vibrant for engagement */
-  --chart-1: oklch(0.55 0.25 140);
-  --chart-2: oklch(0.50 0.22 185);
-  --chart-3: oklch(0.45 0.25 220);
-  --chart-4: oklch(0.60 0.22 280);
-  --chart-5: oklch(0.65 0.20 320);
+  --chart-1: var(--rich-purple);
+  --chart-2: var(--bright-blue);
+  --chart-3: var(--electric-pink);
+  --chart-4: var(--orange-red);
+  --chart-5: var(--amber-yellow);
 
   /* Sidebar - consistent with theme */
-  --sidebar: oklch(0.97 0.04 220);
+  --sidebar: oklch(1 0 0);
   --sidebar-foreground: oklch(0.15 0 0);
-  --sidebar-primary: var(--blue-500);
+  --sidebar-primary: var(--rich-purple);
   --sidebar-primary-foreground: oklch(0.95 0 0);
-  --sidebar-accent: oklch(0.94 0.06 220);
+  --sidebar-accent: oklch(1 0 0);
   --sidebar-accent-foreground: oklch(0.15 0 0);
-  --sidebar-border: oklch(0.88 0.06 220);
-  --sidebar-ring: oklch(0.45 0.25 220);
+  --sidebar-border: oklch(0.88 0.06 295);
+  --sidebar-ring: var(--rich-purple);
 
   /* Override default radius for Foundation theme */
   --radius: var(--border-radius);
@@ -191,24 +193,24 @@
   --border-radius: 0.625rem;
 
   /* Tier 2: Semantic Tokens - Pathways Theme */
-  --background: oklch(0.99 0.02 185);
+  --background: oklch(1 0 0);
   --foreground: oklch(0.15 0 0);
-  --card: oklch(0.985 0.01 185);
+  --card: oklch(1 0 0);
   --card-foreground: oklch(0.15 0 0);
-  --popover: oklch(0.985 0.01 185);
+  --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.15 0 0);
   --primary: var(--teal-500);
   --primary-foreground: oklch(0.95 0 0);
   --secondary: var(--purple-600);
   --secondary-foreground: oklch(0.95 0 0);
-  --muted: oklch(0.97 0.015 185);
+  --muted: oklch(1 0 0);
   --muted-foreground: oklch(0.45 0 0);
   --accent: var(--coral-500);
   --accent-foreground: oklch(0.95 0 0);
   --destructive: oklch(0.65 0.28 20);
   --destructive-foreground: oklch(0.95 0 0);
   --border: oklch(0.92 0.03 185);
-  --input: oklch(0.94 0.02 185);
+  --input: oklch(1 0 0);
   --ring: oklch(0.50 0.20 185);
 
   /* Chart colors - modern and balanced */
@@ -219,11 +221,11 @@
   --chart-5: oklch(0.45 0.18 300);
 
   /* Sidebar - contemporary design */
-  --sidebar: oklch(0.975 0.015 185);
+  --sidebar: oklch(1 0 0);
   --sidebar-foreground: oklch(0.15 0 0);
   --sidebar-primary: var(--teal-500);
   --sidebar-primary-foreground: oklch(0.95 0 0);
-  --sidebar-accent: oklch(0.95 0.025 185);
+  --sidebar-accent: oklch(1 0 0);
   --sidebar-accent-foreground: oklch(0.15 0 0);
   --sidebar-border: oklch(0.90 0.04 185);
   --sidebar-ring: oklch(0.50 0.20 185);
@@ -253,22 +255,22 @@
   /* Tier 2: Semantic Tokens - Professional Theme */
   --background: oklch(1 0 0);
   --foreground: oklch(0.12 0 0);
-  --card: oklch(0.99 0.005 220);
+  --card: oklch(1 0 0);
   --card-foreground: oklch(0.12 0 0);
-  --popover: oklch(0.99 0.005 220);
+  --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.12 0 0);
   --primary: var(--navy-600);
   --primary-foreground: oklch(0.95 0 0);
   --secondary: var(--slate-500);
   --secondary-foreground: oklch(0.95 0 0);
-  --muted: oklch(0.96 0.01 220);
+  --muted: oklch(1 0 0);
   --muted-foreground: oklch(0.50 0 0);
   --accent: var(--gold-500);
   --accent-foreground: oklch(0.10 0 0);
   --destructive: oklch(0.62 0.22 15);
   --destructive-foreground: oklch(0.95 0 0);
   --border: oklch(0.94 0.01 220);
-  --input: oklch(0.96 0.008 220);
+  --input: oklch(1 0 0);
   --ring: oklch(0.25 0.15 230);
 
   /* Chart colors - sophisticated and professional */
@@ -279,11 +281,11 @@
   --chart-5: oklch(0.45 0.08 240);
 
   /* Sidebar - clean and efficient */
-  --sidebar: oklch(0.98 0.005 220);
+  --sidebar: oklch(1 0 0);
   --sidebar-foreground: oklch(0.12 0 0);
   --sidebar-primary: var(--navy-600);
   --sidebar-primary-foreground: oklch(0.95 0 0);
-  --sidebar-accent: oklch(0.95 0.01 220);
+  --sidebar-accent: oklch(1 0 0);
   --sidebar-accent-foreground: oklch(0.12 0 0);
   --sidebar-border: oklch(0.92 0.015 220);
   --sidebar-ring: oklch(0.25 0.15 230);

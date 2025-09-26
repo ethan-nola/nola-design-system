@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/table";
 // Replace nextjs-vite with the name of your framework
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import { useState, useEffect, useReducer } from "react";
 
 type Swatch = {
   name: string;
@@ -15,6 +16,24 @@ type Swatch = {
 };
 
 const SwatchList = ({ colors }: { colors: Record<string, string> }) => {
+  // Force re-render when theme changes
+  const [, forceUpdate] = useReducer(x => x + 1, 0);
+
+  useEffect(() => {
+    // Use MutationObserver to detect theme class changes
+    const observer = new MutationObserver(() => {
+      forceUpdate(); // Force a re-render to get fresh CSS values
+    });
+    
+    // Watch for class attribute changes on the document element
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class", "data-theme"]
+    });
+    
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="flex overflow-clip rounded-md border shadow">
       {Object.entries(colors).map(([name, value], idx) => {
