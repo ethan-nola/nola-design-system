@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "theme-professional",
+  "type": "registry:theme",
+  "title": "Professional Educational Theme",
+  "author": "NOLA Education <team@nolaeducation.org>",
+  "description": "Sophisticated theme for post-graduate learners (ages 18+) with information-dense layouts and refined visual treatments",
+  "files": [
+    {
+      "path": "registry/themes/professional-theme/professional.json",
+      "content": "{\n  \"$schema\": \"https://ui.shadcn.com/schema/registry-item.json\",\n  \"name\": \"theme-professional\",\n  \"type\": \"registry:theme\",\n  \"title\": \"Professional Educational Theme\",\n  \"description\": \"Sophisticated theme for post-graduate learners (ages 18+) with information-dense layouts and refined visual treatments\",\n  \"categories\": [\"education\", \"theme\", \"professional\", \"post-graduate\"],\n  \"author\": \"NOLA Education <team@nolaeducation.org>\",\n  \"version\": \"1.0.0\",\n  \"cssVars\": {\n    \"light\": {\n      \"background\": \"oklch(1 0 0)\",\n      \"foreground\": \"oklch(0.12 0 0)\",\n      \"card\": \"oklch(1 0 0)\",\n      \"card-foreground\": \"oklch(0.12 0 0)\",\n      \"popover\": \"oklch(1 0 0)\",\n      \"popover-foreground\": \"oklch(0.12 0 0)\",\n      \"primary\": \"oklch(0.25 0.15 230)\",\n      \"primary-foreground\": \"oklch(0.95 0 0)\",\n      \"secondary\": \"oklch(0.35 0.10 220)\",\n      \"secondary-foreground\": \"oklch(0.95 0 0)\",\n      \"muted\": \"oklch(1 0 0)\",\n      \"muted-foreground\": \"oklch(0.50 0 0)\",\n      \"accent\": \"oklch(0.70 0.20 65)\",\n      \"accent-foreground\": \"oklch(0.10 0 0)\",\n      \"destructive\": \"oklch(0.62 0.22 15)\",\n      \"destructive-foreground\": \"oklch(0.95 0 0)\",\n      \"border\": \"oklch(0.94 0.01 220)\",\n      \"input\": \"oklch(1 0 0)\",\n      \"ring\": \"oklch(0.25 0.15 230)\",\n      \"chart-1\": \"oklch(0.25 0.15 230)\",\n      \"chart-2\": \"oklch(0.35 0.10 220)\",\n      \"chart-3\": \"oklch(0.70 0.20 65)\",\n      \"chart-4\": \"oklch(0.30 0.12 200)\",\n      \"chart-5\": \"oklch(0.45 0.08 240)\",\n      \"sidebar\": \"oklch(1 0 0)\",\n      \"sidebar-foreground\": \"oklch(0.12 0 0)\",\n      \"sidebar-primary\": \"oklch(0.25 0.15 230)\",\n      \"sidebar-primary-foreground\": \"oklch(0.95 0 0)\",\n      \"sidebar-accent\": \"oklch(1 0 0)\",\n      \"sidebar-accent-foreground\": \"oklch(0.12 0 0)\",\n      \"sidebar-border\": \"oklch(0.92 0.015 220)\",\n      \"sidebar-ring\": \"oklch(0.25 0.15 230)\",\n      \"radius\": \"0.5rem\"\n    }\n  },\n  \"meta\": {\n    \"educationalContext\": {\n      \"ageGroup\": \"18+\",\n      \"cognitiveLevel\": \"post-graduate\",\n      \"touchTargetMin\": \"40px\",\n      \"contrastRatio\": \"precise\",\n      \"visualComplexity\": \"information-dense\",\n      \"wcagLevel\": \"AA\"\n    },\n    \"designTokens\": {\n      \"fontSizeBase\": \"14px\",\n      \"lineHeightBase\": \"1.4\",\n      \"focusWidth\": \"1px\",\n      \"borderRadius\": \"0.5rem\",\n      \"minTouchTarget\": \"40px\"\n    },\n    \"colorPalette\": {\n      \"primary\": \"Navy Blue - Authoritative and trustworthy\",\n      \"secondary\": \"Slate Gray - Professional and neutral\",\n      \"accent\": \"Gold - Premium and sophisticated\",\n      \"destructive\": \"Muted Red - Clear but not disruptive\",\n      \"neutral\": \"Cool Grays - Clean and efficient\"\n    },\n    \"designPrinciples\": [\n      \"Information-dense layouts for efficiency\",\n      \"Sophisticated color palette with premium feel\",\n      \"Precise typography for extended reading\",\n      \"Minimal visual noise to reduce cognitive load\",\n      \"Professional aesthetics suitable for workplace\"\n    ]\n  }\n}",
+      "type": "registry:theme"
+    }
+  ],
+  "categories": [
+    "education",
+    "theme",
+    "professional",
+    "post-graduate"
+  ]
+}

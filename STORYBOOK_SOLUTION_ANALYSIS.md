@@ -175,7 +175,7 @@ Event-driven updates (MutationObserver) are preferred over polling or continuous
 - ✅ **Future-proof** for additional themes
 
 **Our solution is NOT:**
-- ❌ A hack or workaround
+- ❌ An inappropriate solution
 - ❌ Technical debt
 - ❌ Band-aid fix
 - ❌ Non-standard approach

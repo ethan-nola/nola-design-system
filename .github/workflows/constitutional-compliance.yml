@@ -1,0 +1,92 @@
+name: Constitutional Compliance Check
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+    
+jobs:
+  constitutional-validation:
+    name: Constitutional Compliance Validation
+    runs-on: ubuntu-latest
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        principle: ['I', 'II', 'III', 'IV', 'V']
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+          
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+        
+      - name: Run Constitutional Principle ${{ matrix.principle }}
+        run: bun test tests/constitutional/principles/principle-${{ matrix.principle }}.test.ts
+        
+      - name: Generate violation report
+        if: failure()
+        run: |
+          echo "# Constitutional Principle ${{ matrix.principle }} Violations" >> constitutional-violations.md
+          echo "" >> constitutional-violations.md
+          echo "The following violations were detected:" >> constitutional-violations.md
+          echo "- Principle ${{ matrix.principle }} compliance check failed" >> constitutional-violations.md
+          echo "- Review the test output above for specific issues" >> constitutional-violations.md
+          echo "- Refer to the Constitutional Compliance Testing Plan for remediation" >> constitutional-violations.md
+          
+      - name: Upload violation report
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: constitutional-violation-report-principle-${{ matrix.principle }}
+          path: constitutional-violations.md
+          
+  constitutional-summary:
+    name: Constitutional Compliance Summary
+    runs-on: ubuntu-latest
+    needs: constitutional-validation
+    if: always()
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+          
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+        
+      - name: Run full constitutional compliance check
+        run: bun run test:constitutional
+        
+      - name: Generate compliance report
+        run: |
+          echo "# 🏛️ Constitutional Compliance Report" >> compliance-report.md
+          echo "" >> compliance-report.md
+          echo "## Summary" >> compliance-report.md
+          echo "Full constitutional compliance test suite execution completed." >> compliance-report.md
+          echo "" >> compliance-report.md
+          echo "## Principles Tested" >> compliance-report.md
+          echo "- ✅ Principle I: Upstream-First Component Architecture" >> compliance-report.md
+          echo "- ✅ Principle II: Theme-Component Separation" >> compliance-report.md
+          echo "- ✅ Principle III: Registry Publishing Compliance" >> compliance-report.md
+          echo "- ✅ Principle IV: Research-Driven Development" >> compliance-report.md
+          echo "- ✅ Principle V: Quality-First Implementation" >> compliance-report.md
+          echo "" >> compliance-report.md
+          echo "## Next Steps" >> compliance-report.md
+          echo "If any tests failed, review the violation reports and address the issues before merging." >> compliance-report.md
+          
+      - name: Upload compliance report
+        uses: actions/upload-artifact@v4
+        with:
+          name: constitutional-compliance-report
+          path: compliance-report.md

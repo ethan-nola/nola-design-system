@@ -1069,6 +1069,99 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "theme-foundation",
+      "type": "registry:theme",
+      "title": "Foundation Educational Theme",
+      "description": "Age-appropriate theme for middle school learners (ages 11-14) with larger touch targets, higher contrast, and engaging visual elements",
+      "categories": ["education", "theme", "foundation", "middle-school"],
+      "author": "NOLA Education <team@nolaeducation.org>",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "registry/themes/foundation-theme/foundation.json",
+          "type": "registry:theme"
+        },
+        {
+          "path": "registry/themes/foundation-theme/foundation.css",
+          "type": "registry:style"
+        }
+      ]
+    },
+    {
+      "name": "theme-pathways",
+      "type": "registry:theme",
+      "title": "Pathways Educational Theme",
+      "description": "Age-appropriate theme for high school learners (ages 14-18) with modern design patterns and balanced visual hierarchy",
+      "categories": ["education", "theme", "pathways", "high-school"],
+      "author": "NOLA Education <team@nolaeducation.org>",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "registry/themes/pathways-theme/pathways.json",
+          "type": "registry:theme"
+        },
+        {
+          "path": "registry/themes/pathways-theme/pathways.css",
+          "type": "registry:style"
+        }
+      ]
+    },
+    {
+      "name": "theme-professional",
+      "type": "registry:theme",
+      "title": "Professional Educational Theme",
+      "description": "Sophisticated theme for post-graduate learners (ages 18+) with information-dense layouts and refined visual treatments",
+      "categories": ["education", "theme", "professional", "post-graduate"],
+      "author": "NOLA Education <team@nolaeducation.org>",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "registry/themes/professional-theme/professional.json",
+          "type": "registry:theme"
+        },
+        {
+          "path": "registry/themes/professional-theme/professional.css",
+          "type": "registry:style"
+        }
+      ]
+    },
+    {
+      "name": "education-themes",
+      "type": "registry:theme",
+      "title": "Complete Educational Theme Collection",
+      "description": "All three NOLA educational themes (Foundation, Pathways, Professional) for age-appropriate learning experiences",
+      "categories": ["education", "theme", "collection"],
+      "author": "NOLA Education <team@nolaeducation.org>",
+      "version": "1.0.0",
+      "registryDependencies": ["theme-foundation", "theme-pathways", "theme-professional"],
+      "files": [
+        {
+          "path": "registry/themes/foundation-theme/foundation.json",
+          "type": "registry:theme"
+        },
+        {
+          "path": "registry/themes/foundation-theme/foundation.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "registry/themes/pathways-theme/pathways.json",
+          "type": "registry:theme"
+        },
+        {
+          "path": "registry/themes/pathways-theme/pathways.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "registry/themes/professional-theme/professional.json",
+          "type": "registry:theme"
+        },
+        {
+          "path": "registry/themes/professional-theme/professional.css",
+          "type": "registry:style"
+        }
+      ]
     }
   ]
 }

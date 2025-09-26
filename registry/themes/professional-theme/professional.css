@@ -1,0 +1,59 @@
+/* Educational Theme: Professional (Ages 18+) */
+.professional {
+  /* Theme Metadata */
+  --theme-name: 'professional';
+  --theme-version: '1.0.0';
+
+  /* Tier 1: Raw Color Tokens */
+  --navy-600: oklch(0.25 0.15 230);
+  --slate-500: oklch(0.35 0.10 220);
+  --gold-500: oklch(0.70 0.20 65);
+
+  /* Educational-specific Raw Tokens */
+  --min-touch-target: 40px;
+  --font-size-base: 14px;
+  --line-height-base: 1.4;
+  --focus-width: 1px;
+  --border-radius: 0.5rem;
+
+  /* Tier 2: Semantic Tokens - Professional Theme */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.12 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.12 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.12 0 0);
+  --primary: var(--navy-600);
+  --primary-foreground: oklch(0.95 0 0);
+  --secondary: var(--slate-500);
+  --secondary-foreground: oklch(0.95 0 0);
+  --muted: oklch(1 0 0);
+  --muted-foreground: oklch(0.50 0 0);
+  --accent: var(--gold-500);
+  --accent-foreground: oklch(0.10 0 0);
+  --destructive: oklch(0.62 0.22 15);
+  --destructive-foreground: oklch(0.95 0 0);
+  --border: oklch(0.94 0.01 220);
+  --input: oklch(1 0 0);
+  --ring: oklch(0.25 0.15 230);
+
+  /* Chart colors - sophisticated and professional */
+  --chart-1: oklch(0.25 0.15 230);
+  --chart-2: oklch(0.35 0.10 220);
+  --chart-3: oklch(0.70 0.20 65);
+  --chart-4: oklch(0.30 0.12 200);
+  --chart-5: oklch(0.45 0.08 240);
+
+  /* Sidebar - clean and efficient */
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.12 0 0);
+  --sidebar-primary: var(--navy-600);
+  --sidebar-primary-foreground: oklch(0.95 0 0);
+  --sidebar-accent: oklch(1 0 0);
+  --sidebar-accent-foreground: oklch(0.12 0 0);
+  --sidebar-border: oklch(0.92 0.015 220);
+  --sidebar-ring: oklch(0.25 0.15 230);
+
+  /* Override default radius for Professional theme */
+  --radius: var(--border-radius);
+}

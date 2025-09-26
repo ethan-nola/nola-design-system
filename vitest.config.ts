@@ -39,6 +39,14 @@ export default defineConfig({
           environment: "jsdom",
         },
       },
+      {
+        test: {
+          name: "constitutional-compliance",
+          environment: "node",
+          include: ["tests/constitutional/**/*.test.ts"],
+          setupFiles: ["tests/constitutional/setup.ts"],
+        },
+      },
     ],
   },
 });

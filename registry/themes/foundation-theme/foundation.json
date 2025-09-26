@@ -1,0 +1,78 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "theme-foundation",
+  "type": "registry:theme",
+  "title": "Foundation Educational Theme",
+  "description": "Age-appropriate theme for middle school learners (ages 11-14) with larger touch targets, higher contrast, and engaging visual elements",
+  "categories": ["education", "theme", "foundation", "middle-school"],
+  "author": "NOLA Education <team@nolaeducation.org>",
+  "version": "1.0.0",
+  "cssVars": {
+    "light": {
+      "background": "oklch(1 0 0)",
+      "foreground": "oklch(0.15 0 0)",
+      "card": "oklch(1 0 0)",
+      "card-foreground": "oklch(0.15 0 0)",
+      "popover": "oklch(1 0 0)",
+      "popover-foreground": "oklch(0.15 0 0)",
+      "primary": "oklch(0.546 0.248 295.9)",
+      "primary-foreground": "oklch(0.95 0 0)",
+      "secondary": "oklch(0.637 0.195 259.5)",
+      "secondary-foreground": "oklch(0.95 0 0)",
+      "muted": "oklch(1 0 0)",
+      "muted-foreground": "oklch(0.40 0 0)",
+      "accent": "oklch(0.641 0.257 8.1)",
+      "accent-foreground": "oklch(0.95 0 0)",
+      "destructive": "oklch(0.671 0.212 39.0)",
+      "destructive-foreground": "oklch(0.95 0 0)",
+      "border": "oklch(0.90 0.05 83)",
+      "input": "oklch(1 0 0)",
+      "ring": "oklch(0.546 0.248 295.9)",
+      "chart-1": "oklch(0.546 0.248 295.9)",
+      "chart-2": "oklch(0.637 0.195 259.5)",
+      "chart-3": "oklch(0.641 0.257 8.1)",
+      "chart-4": "oklch(0.671 0.212 39.0)",
+      "chart-5": "oklch(0.839 0.171 83.3)",
+      "sidebar": "oklch(1 0 0)",
+      "sidebar-foreground": "oklch(0.15 0 0)",
+      "sidebar-primary": "oklch(0.546 0.248 295.9)",
+      "sidebar-primary-foreground": "oklch(0.95 0 0)",
+      "sidebar-accent": "oklch(1 0 0)",
+      "sidebar-accent-foreground": "oklch(0.15 0 0)",
+      "sidebar-border": "oklch(0.88 0.06 295)",
+      "sidebar-ring": "oklch(0.546 0.248 295.9)",
+      "radius": "0.75rem"
+    }
+  },
+  "meta": {
+    "educationalContext": {
+      "ageGroup": "11-14",
+      "cognitiveLevel": "middle-school",
+      "touchTargetMin": "48px",
+      "contrastRatio": "enhanced",
+      "visualComplexity": "engaging",
+      "wcagLevel": "AA"
+    },
+    "designTokens": {
+      "fontSizeBase": "16px",
+      "lineHeightBase": "1.6",
+      "focusWidth": "3px",
+      "borderRadius": "0.75rem",
+      "minTouchTarget": "48px"
+    },
+    "colorPalette": {
+      "primary": "Rich Purple - Engaging and authoritative",
+      "secondary": "Bright Blue - Friendly and approachable", 
+      "accent": "Electric Pink - Exciting and attention-grabbing",
+      "destructive": "Orange Red - Clear warning signal",
+      "neutral": "Amber Yellow - Warm and inviting"
+    },
+    "designPrinciples": [
+      "Larger touch targets for developing motor skills",
+      "Higher contrast ratios for easier reading",
+      "Vibrant colors to maintain engagement",
+      "Friendly rounded corners to reduce anxiety",
+      "Clear visual hierarchy for cognitive development"
+    ]
+  }
+}

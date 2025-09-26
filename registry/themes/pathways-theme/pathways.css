@@ -1,0 +1,59 @@
+/* Educational Theme: Pathways (Ages 14-18) */
+.pathways {
+  /* Theme Metadata */
+  --theme-name: 'pathways';
+  --theme-version: '1.0.0';
+
+  /* Tier 1: Raw Color Tokens */
+  --teal-500: oklch(0.50 0.20 185);
+  --purple-600: oklch(0.40 0.25 270);
+  --coral-500: oklch(0.65 0.30 25);
+
+  /* Educational-specific Raw Tokens */
+  --min-touch-target: 44px;
+  --font-size-base: 15px;
+  --line-height-base: 1.5;
+  --focus-width: 2px;
+  --border-radius: 0.625rem;
+
+  /* Tier 2: Semantic Tokens - Pathways Theme */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.15 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0 0);
+  --primary: var(--teal-500);
+  --primary-foreground: oklch(0.95 0 0);
+  --secondary: var(--purple-600);
+  --secondary-foreground: oklch(0.95 0 0);
+  --muted: oklch(1 0 0);
+  --muted-foreground: oklch(0.45 0 0);
+  --accent: var(--coral-500);
+  --accent-foreground: oklch(0.95 0 0);
+  --destructive: oklch(0.65 0.28 20);
+  --destructive-foreground: oklch(0.95 0 0);
+  --border: oklch(0.92 0.03 185);
+  --input: oklch(1 0 0);
+  --ring: oklch(0.50 0.20 185);
+
+  /* Chart colors - modern and balanced */
+  --chart-1: oklch(0.50 0.20 185);
+  --chart-2: oklch(0.55 0.22 200);
+  --chart-3: oklch(0.40 0.25 270);
+  --chart-4: oklch(0.65 0.30 25);
+  --chart-5: oklch(0.45 0.18 300);
+
+  /* Sidebar - contemporary design */
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.15 0 0);
+  --sidebar-primary: var(--teal-500);
+  --sidebar-primary-foreground: oklch(0.95 0 0);
+  --sidebar-accent: oklch(1 0 0);
+  --sidebar-accent-foreground: oklch(0.15 0 0);
+  --sidebar-border: oklch(0.90 0.04 185);
+  --sidebar-ring: oklch(0.50 0.20 185);
+
+  /* Override default radius for Pathways theme */
+  --radius: var(--border-radius);
+}

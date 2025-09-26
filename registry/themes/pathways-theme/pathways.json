@@ -1,0 +1,78 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "theme-pathways",
+  "type": "registry:theme",
+  "title": "Pathways Educational Theme",
+  "description": "Age-appropriate theme for high school learners (ages 14-18) with modern design patterns and balanced visual hierarchy",
+  "categories": ["education", "theme", "pathways", "high-school"],
+  "author": "NOLA Education <team@nolaeducation.org>",
+  "version": "1.0.0",
+  "cssVars": {
+    "light": {
+      "background": "oklch(1 0 0)",
+      "foreground": "oklch(0.15 0 0)",
+      "card": "oklch(1 0 0)",
+      "card-foreground": "oklch(0.15 0 0)",
+      "popover": "oklch(1 0 0)",
+      "popover-foreground": "oklch(0.15 0 0)",
+      "primary": "oklch(0.50 0.20 185)",
+      "primary-foreground": "oklch(0.95 0 0)",
+      "secondary": "oklch(0.40 0.25 270)",
+      "secondary-foreground": "oklch(0.95 0 0)",
+      "muted": "oklch(1 0 0)",
+      "muted-foreground": "oklch(0.45 0 0)",
+      "accent": "oklch(0.65 0.30 25)",
+      "accent-foreground": "oklch(0.95 0 0)",
+      "destructive": "oklch(0.65 0.28 20)",
+      "destructive-foreground": "oklch(0.95 0 0)",
+      "border": "oklch(0.92 0.03 185)",
+      "input": "oklch(1 0 0)",
+      "ring": "oklch(0.50 0.20 185)",
+      "chart-1": "oklch(0.50 0.20 185)",
+      "chart-2": "oklch(0.55 0.22 200)",
+      "chart-3": "oklch(0.40 0.25 270)",
+      "chart-4": "oklch(0.65 0.30 25)",
+      "chart-5": "oklch(0.45 0.18 300)",
+      "sidebar": "oklch(1 0 0)",
+      "sidebar-foreground": "oklch(0.15 0 0)",
+      "sidebar-primary": "oklch(0.50 0.20 185)",
+      "sidebar-primary-foreground": "oklch(0.95 0 0)",
+      "sidebar-accent": "oklch(1 0 0)",
+      "sidebar-accent-foreground": "oklch(0.15 0 0)",
+      "sidebar-border": "oklch(0.90 0.04 185)",
+      "sidebar-ring": "oklch(0.50 0.20 185)",
+      "radius": "0.625rem"
+    }
+  },
+  "meta": {
+    "educationalContext": {
+      "ageGroup": "14-18",
+      "cognitiveLevel": "high-school",
+      "touchTargetMin": "44px",
+      "contrastRatio": "standard",
+      "visualComplexity": "balanced",
+      "wcagLevel": "AA"
+    },
+    "designTokens": {
+      "fontSizeBase": "15px",
+      "lineHeightBase": "1.5",
+      "focusWidth": "2px",
+      "borderRadius": "0.625rem",
+      "minTouchTarget": "44px"
+    },
+    "colorPalette": {
+      "primary": "Teal - Modern and trustworthy",
+      "secondary": "Purple - Creative and inspiring",
+      "accent": "Coral - Energetic and social",
+      "destructive": "Warm Red - Clear but not alarming",
+      "neutral": "Cool Grays - Contemporary and clean"
+    },
+    "designPrinciples": [
+      "Modern aesthetics that appeal to teenagers",
+      "Balanced visual hierarchy for complex information",
+      "Contemporary color palette with social appeal",
+      "Collaborative-friendly interface elements",
+      "Career-exploration focused design patterns"
+    ]
+  }
+}
